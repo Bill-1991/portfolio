@@ -62,7 +62,6 @@ const Home = (props) => {
 <div><Spring from={{ opacity: 0 }} to={{ opacity: 1 }} config={{delay: 2000, duration: 1000}}> 
    {prop => <Button onClick={props.handleContact} style={prop}>Contact</Button>}
 </Spring></div>
-<button>hello</button>
 </div>
   )
 }
