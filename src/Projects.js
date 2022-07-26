@@ -1,6 +1,6 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Container, Col, Row, Card} from "react-bootstrap"
+import {Col, Row, Card} from "react-bootstrap"
 import "./App.css"
 import { Spring } from "react-spring/renderprops"
 

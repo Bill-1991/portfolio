@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Spring } from "react-spring/renderprops"
 import { Button} from 'react-bootstrap';
 import "./App.css"
-import "./index.css"
 
 
 const Home = (props) => {
@@ -63,6 +62,7 @@ const Home = (props) => {
 <div><Spring from={{ opacity: 0 }} to={{ opacity: 1 }} config={{delay: 2000, duration: 1000}}> 
    {prop => <Button onClick={props.handleContact} style={prop}>Contact</Button>}
 </Spring></div>
+<button>hello</button>
 </div>
   )
 }
