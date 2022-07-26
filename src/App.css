@@ -1,38 +1,304 @@
-.App {
-  text-align: center;
+.portfolio{
+    background-size: cover;
+    min-height: 100vh;
+    height: 100%;
+    min-width: fit-content;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.nav{
+    text-align: center;
+    background-color: rgba(15, 122, 145, 0.9);
+    justify-content: center;
+    align-content: start;
+    min-height: 100vh;
+    height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav .social .face .popuptext{
+    position:fixed;
+    visibility: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav .social .face:hover .popuptext{
+    visibility: visible;
+    background-color: black;
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav .social .linked .popuptext{
+    position:fixed;
+    visibility: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav .social .linked:hover .popuptext{
+    visibility: visible;
+    background-color: black;
+    color: white;
 }
+
+.nav .social .git .popuptext{
+    position:fixed;
+    visibility: hidden;
+}
+
+.nav .social .git:hover .popuptext{
+    visibility: visible;
+    background-color: black;
+    color: white;
+}
+
+.nav .social .twit .popuptext{
+    position:fixed;
+    visibility: hidden;
+}
+
+.nav .social .twit:hover .popuptext{
+    visibility: visible;
+    background-color: black;
+    color: white;
+}
+
+.nav .social img{
+    width:40px;
+    height:40px;
+}
+
+.me{
+    width: 100%;
+    height: 100%;
+}
+
+.nav button {
+    border: none;
+    font-size: 20px;
+    background-color: rgba(15, 122, 145, 0);
+    color: rgba(220, 220, 220, 1);
+    
+}
+
+.nav button:hover{
+    
+    color: black;
+}
+
+.nav h3{
+    font-size: 30px;
+    color:rgba(80, 10, 0, 1);
+
+}
+
+.nav h4{
+    font-size: 20px;
+    color:rgba(80, 10, 0, 1);
+    
+}
+
+
+.navmob{
+    display: none;
+}
+
+
+.home button{
+    background-color: rgba(0,0,0,0);
+    font-size: 20px;
+    
+}
+
+.home button:hover{
+    background-color: #282c34;
+}
+
+.header{
+    display:flex;
+    justify-content: flex-start;
+    white-space: pre;
+    text-decoration: underline;
+    color: white;
+}
+
+.projects{
+    background-color: #282c34;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.projects .card{
+    height: 100vh;
+    margin-bottom: 10px;
+}
+
+.projects .card img{
+    height:80vh;
+}
+
+.projects .card button{
+    border: none;
+    background-color: white;
+    color:rgba(220, 220, 220, 1)
+}
+
+.about{
+    background-color: #282c34;
+    color:rgba(220, 220, 220, 1);
+    text-align: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.about img{
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.about .intro{
+    justify-content: center;
+}
+
+.contact{
+    background-color: #282c34;
+    color:rgba(220, 220, 220, 1);
+    min-height: 100vh;
+    height: fit-content;
+}
+
+.contact .contacts{
+    display: grid;
+    align-content: start !important
+}
+
+
+.contact .form{
+    display: grid;
+}
+
+@media only screen and (max-height: 600px) {
+    
+    .nav .social img{
+        width: 25px;
+        height: 25px;
+    }
+
+    .nav .me{
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav h3{
+        font-size: 20px;
+    }
+
+    .nav h4{
+       font-size: 14px;
+    }
+
+    .nav button {
+        font-size: 15px;
+    }
+
+    .projects .card{
+        height: fit-content;
+    }
+
+    .projects .card img{
+        height: 80vh;
+    }
+
+}
+
+
+
+@media only screen and (max-height: 470px) {
+    .nav .social{
+        display: none !important;
+    }
+
+    .nav .onsocial{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 576px) { 
+    
+    .portfolio{
+        min-width: fit-content;
+    }
+
+    .nav{
+        display: none !important;
+    }
+
+    .navmob{
+        display: grid;
+        grid-template-columns: 65% 35%;
+        background-color: rgba(100,150,150,0.8);
+    }
+    
+    .navmob .mobsocial img{
+        width: 20px;
+        height: 20px;
+     } 
+
+    .navmob button{
+        background-color: rgba(0,0,0,0);
+        border: none;
+    }
+
+    .navmob button:hover{
+        color: rgba(250,255,255,1);
+    }
+
+    .navmob .more{
+        display:grid;
+        justify-self: end;   
+    }
+
+    .navmob .more button{
+        justify-self: end;
+        
+    }
+
+    .navmob .onmore{
+        display:grid;
+       
+    }
+
+    .navmob .onmore button{
+        font-size: 16px;
+        border-bottom: 2px;
+    }
+    
+    .about .intro{
+        display:grid;
+        justify-content: center;
+    }
+
+    .about .intro img{
+        display:flex;
+        justify-self: center;
+    }
+    
+}
+
+@media only screen and (max-width: 620px) {
+    .header{
+        font-size: 24px;
+    }
+    
+}
+
+@media only screen and (max-width: 445px) {
+    .header{
+        font-size: 20px;
+    }   
+}
+
+@media only screen and (max-width: 360px) {
+    .header{
+        font-size: 17px;
+    }   
+}
+
