@@ -14,15 +14,15 @@ const Projects = () => {
   console.log(height)
 
   return (
-    <Row className='projects'>{done.map(project => <Col sm={12} md={6} lg={4}><Spring key={project.id} from={{ opacity: 0 }} to={{ opacity: 1 }} config={{ delay: project.delay, duration: 1000 }}>
+    <Row className='projects'>{done.map(project => <Col sm={12} md={12} lg={12}><Spring key={project.id} from={{ opacity: 0 }} to={{ opacity: 1 }} config={{ delay: project.delay, duration: 1000 }}>
         {props => <Card style={props} className={project.id}>
-          <Card.Img src={project.img} alt={project.name} />
-          <Card.Body>
+          <Row><Col sm={12} md={6} lg={5}><Card.Img src={project.img} alt={project.name} /></Col>
+          <Col sm={12} md={6} lg={7}><Card.Body>
           <Card.Title>{project.name}</Card.Title>
           <Card.Text>{project.desc}</Card.Text>
           <button><a href={project.liveSite} target="_blank" rel="noreferrer" className='livesite'>Live_Site</a></button>
           <button><a href={project.source} target="_blank" rel="noreferrer" className='source'>Source Code</a></button>
-          </Card.Body>
+          </Card.Body></Col></Row>
           </Card>}
       </Spring></Col>)}
       </Row>

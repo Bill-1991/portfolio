@@ -122,15 +122,16 @@
     background-color: #282c34;
     text-align: center;
     min-height: 100vh;
+    align-items: center;
 }
 
 .projects .card{
-    height: 100vh;
-    margin-bottom: 10px;
+    height: 33vh;
+
 }
 
 .projects .card img{
-    height:80vh;
+    height: 32.8vh;
 }
 
 .projects .card button{
@@ -199,12 +200,16 @@
         font-size: 15px;
     }
 
-    .projects .card{
-        height: fit-content;
+    .projects{
+        gap: 1vh;
     }
-
+    
+    .projects .card{
+        height: 49vh;
+    }
+    
     .projects .card img{
-        height: 80vh;
+        height: 49vh;
     }
 
 }
@@ -218,6 +223,16 @@
 
     .nav .onsocial{
         display: none;
+    }
+}
+
+@media only screen and (max-height: 470px) {
+    .projects .card{
+        height: 100vh;
+    }
+    
+    .projects .card img{
+        height: 100vh;
     }
 }
 
@@ -281,6 +296,16 @@
         justify-self: center;
     }
     
+}
+
+@media only screen and (max-width: 767.20px) {
+    .projects .card {
+        height: 100vh;
+    }
+
+    .projects .card img{
+        height: 70vh;
+    }
 }
 
 @media only screen and (max-width: 620px) {
