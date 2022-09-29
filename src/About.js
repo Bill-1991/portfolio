@@ -9,7 +9,7 @@ import css from "./css.png"
 import bootstrap from "./bootstrap.gif"
 import react from "./react.webp"
 import {useState} from "react"
-import { clear } from '@testing-library/user-event/dist/clear';
+//import { clear } from '@testing-library/user-event/dist/clear';
 
 
 const About = (props) => {
@@ -58,7 +58,7 @@ const About = (props) => {
       <h4 className='mt-2'>I would love for you to give me any project you have in mind
            I will try my best possible and will deliver everything you ask,be it a one page website or a larger scale project!</h4>
            
-      <p className='mt-3'>Thank you for checking my portfolio.The source code of it is <strong><a href="" target="_blank">here</a></strong></p>
+      <p className='mt-3'>Thank you for checking my portfolio.The source code of it is <strong><p>here</p></strong></p>
   </Row>
   </Row>
   )
