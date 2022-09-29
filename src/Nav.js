@@ -13,7 +13,7 @@ const Nav = (props) => {
       <Row className="nav">
     <div className='d-grid'>    
     <img className='me' onClick={props.handleHome} style={{borderRadius: "100%"}} src="https://picsum.photos/200/200" alt="me" />
-    <h3>Vasileios</h3>
+    <h3>Vasileios Al</h3>
     <h4>Front-end developer!</h4>
     
     <button className='mt-4' onClick={() => props.handleAbout()}>About</button>
