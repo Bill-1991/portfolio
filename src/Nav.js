@@ -1,22 +1,22 @@
 import React from 'react'
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Row, Col} from "react-bootstrap"
+import {Row, Col, Navbar} from "react-bootstrap"
 import fb from "./fb.png"
 import linked from "./linked.png"
 import git from "./git.png"
-import twit from "./twit.jpg"
 
 
 const Nav = (props) => {
   return (
-    <Row className='nav'> 
+    <Navbar className="bignav" style={{height: "100vh"}} sticky="top">
+      <Row className="nav">
     <div className='d-grid'>    
     <img className='me' onClick={props.handleHome} style={{borderRadius: "100%"}} src="https://picsum.photos/200/200" alt="me" />
     <h3>Vasileios</h3>
     <h4>Front-end developer!</h4>
     
-    <button className='mt-4' onClick={props.handleAbout}>About</button>
+    <button className='mt-4' onClick={() => props.handleAbout()}>About</button>
     <button onClick={props.handleProjects}>Projects</button>
     <button onClick={props.handleContact}>Contact</button>
     </div>
@@ -25,24 +25,20 @@ const Nav = (props) => {
       <h4 className='onsocial mt-5'>Get Social!</h4>
       <Row className='social mt-3'>
       <Col  className='face'>
-      <button><img src={fb} alt="facebook" /></button>
+      <a href="https://www.facebook.com/vasilis.altzerinis" target="_blank" rel="noreferrer"><button><img src={fb} alt="facebook" /></button></a>
       <p className='popuptext'>Facebook</p>
       </Col>
       <Col className='linked'>
-      <button><img src={linked} alt="LinkedIn" /></button>
+      <a href="https://www.linkedin.com/in/%CE%B2%CE%B1%CF%83%CE%B9%CE%BB%CE%B7%CF%82-%CE%B1%CE%BB%CF%84%CE%B6%CE%B5%CF%81%CE%B9%CE%BD%CE%B7%CF%82-28319024a/" target="_blank" rel="noreferrer"><button><img src={linked} alt="LinkedIn" /></button></a>
       <p className='popuptext'>LinkedIn</p>
       </Col>
       <Col className='git'>
-      <button><img src={git} alt="GitHub" /></button>
+      <a href="https://github.com/Bill-1991" target="_blank" rel="noreferrer"><button><img src={git} alt="GitHub" /></button></a>
       <p className='popuptext'>GitHub</p>
       </Col>
-      <Col className='twit'>
-      <button><img src={twit} alt="Twitter" /></button>
-      <p className='popuptext'>Twitter</p>
-      </Col>
        </Row>
-    </Row>
-  
+       </Row>
+    </Navbar>
   )
 }
 

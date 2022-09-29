@@ -2,18 +2,18 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Container, Row, Col} from "react-bootstrap"
 import second from "./second.jpg"
-import {useState} from "react"
+import {useState, useRef} from "react"
 import Home from "./Home";
 import Projects from "./Projects";
 import About from "./About";
 import Nav from "./Nav"
 import NavMob from "./NavMob"
 import Contact from "./Contact"
+import emailjs from '@emailjs/browser';
 
-function App() {
- 
-  
-  
+
+function App() { 
+  const [skip, setSkip] = useState(false)
   const [home, setHome] = useState(true)
   const [projects, setProjects] = useState(false)
   const [about, setAbout] = useState(false)
@@ -21,7 +21,28 @@ function App() {
   const [more, setMore] = useState(false)
   const [text, setText] = useState("")
   const [submit, setSubmit] = useState(false)
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const form = useRef();
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setSubmit(true)
+    setText("")
+    setName("")
+    setEmail("")
+    setTimeout(() => {
+        setSubmit(false)
+    }, 2000)
+    emailjs.sendForm('service_xizidug', 'template_wu4635q', form.current, 'jF29LQqfkMdY3CIam')
+      .then((result) => {
+          
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+  
   const handleHome = () => {
     if (home === false) {
       setHome(true)
@@ -29,6 +50,7 @@ function App() {
       setAbout(false)
       setMore(false)
       setContact(false)
+      setSkip(false)
     }
   }
 
@@ -39,6 +61,7 @@ function App() {
       setMore(false)
       setAbout(false)
       setContact(false)
+      setSkip(false)
   }
 }
 
@@ -49,6 +72,7 @@ const handleAbout = () => {
     setProjects(false)
     setContact(false)
     setMore(false)
+    setSkip(false)
   }
 }
 
@@ -59,6 +83,7 @@ const handleContact = () => {
     setHome(false)
     setProjects(false)
     setMore(false)
+    setSkip(false)
   }
 }
 
@@ -70,32 +95,32 @@ const handleMore = () => {
   }
 }
 
-const handleChange = (e) => {
-  e.preventDefault() 
+const handleTextChange = (e) => {
+  e.preventDefault()
   setText(e.target.value)
 }
 
-const handleSubmit = (e) => {
+const handleNameChange = (e) => {
   e.preventDefault()
-  setText("")
-  setSubmit(true)
-  setTimeout(() => setSubmit(false), 2000)
-  clearTimeout()
+  setName(e.target.value)
+}
+
+const handleEmailChange = (e) => {
+  e.preventDefault()
+  setEmail(e.target.value)
 }
 
   return (
-    <Container fluid style={{backgroundImage: `url(${second})`}} className="portfolio">    
+      <Container fluid style={{backgroundImage: `url(${second})`}} className="portfolio">    
         <Row>
         <NavMob more={more} handleMore={handleMore} handleHome={handleHome} handleProjects={handleProjects} handleAbout={handleAbout} handleContact={handleContact} />
         <Col sm={3}><Nav handleHome={handleHome} handleProjects={handleProjects} handleAbout={handleAbout} handleContact={handleContact} /></Col>         
         {home === true ? <Col sm={9}><Home home={home} handleProjects={handleProjects} handleContact={handleContact}/></Col>  : 
           projects === true ? <Col sm={9}><Projects /></Col> 
-          : about === true ? <Col sm={9}><About /></Col> 
-            : contact === true ? <Col sm={9}><Contact submit={submit} text={text} handleChange={handleChange} handleSubmit={handleSubmit} /></Col> : undefined}
+          : about === true ? <Col sm={9}><About skip={skip} /></Col> 
+            : contact === true ? <Col sm={9}><Contact submit={submit} text={text} name={name} email={email} form={form} sendEmail={sendEmail} handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleTextChange={handleTextChange}/></Col> : undefined}
             </Row>         
     </Container>
-  
-    
     );
 }
 

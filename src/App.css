@@ -96,7 +96,7 @@
 
 
 .navmob{
-    display: none;
+    display: none !important;
 }
 
 
@@ -116,28 +116,64 @@
     white-space: pre;
     text-decoration: underline;
     color: white;
+   
 }
 
 .projects{
     background-color: #282c34;
     text-align: center;
     min-height: 100vh;
+    height: fit-content !important;
+}
+
+.card{
+    background-color: black !important;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, .8)!important;
+    position: relative;
+    height: 49vh;
+    margin-top: 1vh;
+    text-align: center;   
+}
+
+.card img{
+    height: 44vh;
+}
+
+.card button{
+    background-color: pink;
+    color: blue;
+}
+
+.card-front {
+    background-color:#282c34;
+    color: pink;
+    transition: all 1s;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    backface-visibility: hidden;
+    
+}
+
+.card-back{
+    color: pink;
+    display: grid;
+    grid-template-rows: 2fr 0.5fr 0.5fr;
     align-items: center;
+    height: 49vh;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    
+
 }
 
-.projects .card{
-    height: 33vh;
-
+.card:hover .card-front {
+    transform: rotateY(-180deg);
 }
-
-.projects .card img{
-    height: 32.8vh;
-}
-
-.projects .card button{
-    border: none;
-    background-color: white;
-    color:rgba(220, 220, 220, 1)
+.card:hover .card-back {
+    transform: rotateY(0);
+    animation: anime 2s 1 ease-in-out;
 }
 
 .about{
@@ -148,7 +184,7 @@
     justify-content: center;
 }
 
-.about img{
+.about .intro img{
     display: none;
     width: 100%;
     height: 100%;
@@ -156,24 +192,41 @@
 }
 
 .about .intro{
+    align-self: start !important;
+}
+
+.about .known{
+    display: grid;
+    grid-template-columns: repeat(6, 15%);
     justify-content: center;
+    gap: 2%
+}
+
+.about .known img{
+    width: 100%;
+    height: 100%
 }
 
 .contact{
     background-color: #282c34;
     color:rgba(220, 220, 220, 1);
     min-height: 100vh;
-    height: fit-content;
+    height: fit-content !important;
 }
 
 .contact .contacts{
-    display: grid;
     align-content: start !important
 }
 
 
 .contact .form{
     display: grid;
+    
+}
+
+.contact .submit:hover{
+    background-color: #282c34 !important;
+    color: white !important;
 }
 
 @media only screen and (max-height: 600px) {
@@ -201,19 +254,26 @@
     }
 
     .projects{
-        gap: 1vh;
+        height: fit-content !important;
+        
     }
-    
+
     .projects .card{
-        height: 49vh;
+        height: 100vh;
+    }
+
+    .card img{
+        height: 80vh;
+    }
+
+    .card .title{
+        height: 15vh;
     }
     
-    .projects .card img{
-        height: 49vh;
+    .card-back{
+        height: 100vh;
     }
-
 }
-
 
 
 @media only screen and (max-height: 470px) {
@@ -226,13 +286,9 @@
     }
 }
 
-@media only screen and (max-height: 470px) {
-    .projects .card{
-        height: 100vh;
-    }
-    
-    .projects .card img{
-        height: 100vh;
+@media only screen and (max-width: 900px) {
+    .portfolio {
+        background-position: right;
     }
 }
 
@@ -240,14 +296,16 @@
     
     .portfolio{
         min-width: fit-content;
+        background-position:center;
     }
 
-    .nav{
+    .bignav{
         display: none !important;
     }
 
     .navmob{
-        display: grid;
+        display: grid !important;
+        align-items: start !important;
         grid-template-columns: 65% 35%;
         background-color: rgba(100,150,150,0.8);
     }
@@ -255,7 +313,11 @@
     .navmob .mobsocial img{
         width: 20px;
         height: 20px;
-     } 
+     }
+     
+     .mobsocial h5{
+        transform: translateY(10%);
+    }
 
     .navmob button{
         background-color: rgba(0,0,0,0);
@@ -267,13 +329,13 @@
     }
 
     .navmob .more{
+        transition: height 0.5s ;
         display:grid;
         justify-self: end;   
     }
 
     .navmob .more button{
         justify-self: end;
-        
     }
 
     .navmob .onmore{
@@ -283,30 +345,25 @@
 
     .navmob .onmore button{
         font-size: 16px;
-        border-bottom: 2px;
+        color: rgba(230, 250, 30, 1);
+    }
+
+    .navmob .onmore button:hover{
+        color: white;
     }
     
     .about .intro{
-        display:grid;
+        display: grid;
         justify-content: center;
     }
 
     .about .intro img{
-        display:flex;
+        display:block;
         justify-self: center;
     }
     
 }
 
-@media only screen and (max-width: 767.20px) {
-    .projects .card {
-        height: 100vh;
-    }
-
-    .projects .card img{
-        height: 70vh;
-    }
-}
 
 @media only screen and (max-width: 620px) {
     .header{
@@ -327,3 +384,17 @@
     }   
 }
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+ }
+
+ @keyframes anime{
+    from{
+        opacity: 0
+    }
+    to{
+        opacity: 1
+    }
+ }

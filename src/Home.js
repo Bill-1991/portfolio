@@ -4,9 +4,7 @@ import { Spring } from "react-spring/renderprops"
 import { Button} from 'react-bootstrap';
 import "./App.css"
 
-
 const Home = (props) => {
-
     const animateHeader = [{letter: "H", delay: 50},
                          {letter: "i", delay: 100},
                          {letter: ",", delay: 150},
@@ -45,7 +43,7 @@ const Home = (props) => {
                          {letter: "e", delay: 1800},
                          {letter: "r", delay: 1850},
                         ]
-  const word = animateHeader.map(letter => <Spring key={letter.delay} from={{ opacity: 0 }} to={{ opacity: 1 }} config={{delay: letter.delay, duration: 1000}}> 
+  const word = animateHeader.map(letter => <Spring key={letter.delay} from={{ opacity: 0, transform: "translateY(-150px)" }} to={{ opacity: 1, transform: "translateY(0)"}} config={{delay: letter.delay, duration: 1000}}> 
     {props => (<p style={props}>{letter.letter}</p>)}
     </Spring>)
 
@@ -53,14 +51,14 @@ const Home = (props) => {
     
     <div className="home" style={{background: "rgba(0, 0, 0, 0)"}}>
       <h2 className='header mt-3'>{word}</h2>
-   <div><Spring from={{ opacity: 0 }} to={{ opacity: 1 }} config={{delay: 2000, duration: 1000}}> 
-   {prop => <Button onClick={props.handleProjects} style={prop}>Projects</Button>}
+   <div><Spring from={{ opacity: 0, transform: "translateX(-100vh)" }} to={{ opacity: 1, transform: "translateX(0)" }} config={{delay: 1500, duration: 1000}}> 
+   {prop => <Button  onClick={props.handleProjects} style={prop}>Projects</Button>}
 </Spring></div>
-<div><Spring from={{ opacity: 0 }} to={{ opacity: 1 }} config={{delay: 2000, duration: 1000}}> 
-   {prop => <Button style={prop} >Blog</Button>}
+<div><Spring from={{ opacity: 0, transform: "translateX(300px)" }} to={{ opacity: 1, transform: "translateX(0)" }} config={{delay: 1500, duration: 1000}}> 
+   {prop => <Button type="reset" style={prop} >Blog</Button>}
 </Spring></div>
-<div><Spring from={{ opacity: 0 }} to={{ opacity: 1 }} config={{delay: 2000, duration: 1000}}> 
-   {prop => <Button onClick={props.handleContact} style={prop}>Contact</Button>}
+<div><Spring from={{ opacity: 0, transform: "translateY(50px)" }} to={{ opacity: 1, transform: "translateY(0)" }} config={{delay: 1500, duration: 1000}}> 
+   {prop => <Button type="reset" onClick={props.handleContact} style={prop}>Contact</Button>}
 </Spring></div>
 </div>
   )
