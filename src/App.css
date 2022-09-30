@@ -99,15 +99,13 @@
     display: none !important;
 }
 
-
 .home button{
-    background-color: rgba(0,0,0,0);
-    font-size: 20px;
-    
+    background-color: rgba(0,0,0,0) !important;
+    font-size: 20px !important;
 }
 
 .home button:hover{
-    background-color: #282c34;
+    background-color: #282c34 !important;
 }
 
 .header{
@@ -164,8 +162,6 @@
     height: 49vh;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-    
-
 }
 
 .card:hover .card-front {

@@ -1,8 +1,9 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Spring } from "react-spring/renderprops"
-import { Button} from 'react-bootstrap';
-import "./App.css"
+import "./App.css";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const Home = (props) => {
     const animateHeader = [{letter: "H", delay: 50},
@@ -49,17 +50,17 @@ const Home = (props) => {
 
   return (
     
-    <div className="home" style={{background: "rgba(0, 0, 0, 0)"}}>
+    <div id="/" className="home" style={{background: "rgba(0, 0, 0, 0)"}}>
       <h2 className='header mt-3'>{word}</h2>
-   <div><Spring from={{ opacity: 0, transform: "translateX(-100vh)" }} to={{ opacity: 1, transform: "translateX(0)" }} config={{delay: 1500, duration: 1000}}> 
-   {prop => <Button  onClick={props.handleProjects} style={prop}>Projects</Button>}
-</Spring></div>
-<div><Spring from={{ opacity: 0, transform: "translateX(300px)" }} to={{ opacity: 1, transform: "translateX(0)" }} config={{delay: 1500, duration: 1000}}> 
+   <Link to="/projects"><div><Spring from={{ opacity: 0, transform: "translateX(-100vh)" }} to={{ opacity: 1, transform: "translateX(0)" }} config={{delay: 1500, duration: 1000}}> 
+   {prop => <Button style={prop}>Projects</Button>}
+</Spring></div></Link>
+<Link to="/blog"><div><Spring from={{ opacity: 0, transform: "translateX(300px)" }} to={{ opacity: 1, transform: "translateX(0)" }} config={{delay: 1500, duration: 1000}}> 
    {prop => <Button type="reset" style={prop} >Blog</Button>}
-</Spring></div>
-<div><Spring from={{ opacity: 0, transform: "translateY(50px)" }} to={{ opacity: 1, transform: "translateY(0)" }} config={{delay: 1500, duration: 1000}}> 
+</Spring></div></Link>
+<Link to="Contact"><div><Spring from={{ opacity: 0, transform: "translateY(50px)" }} to={{ opacity: 1, transform: "translateY(0)" }} config={{delay: 1500, duration: 1000}}> 
    {prop => <Button type="reset" onClick={props.handleContact} style={prop}>Contact</Button>}
-</Spring></div>
+</Spring></div></Link>
 </div>
   )
 }

@@ -6,9 +6,9 @@ import "./App.css"
 
 
 const Projects = () => {
-  const done = [{id: "0", name: "E-commerce", img: "https://picsum.photos/200/300", desc: "Fully responsive e-commerce site for ordering through net on a small local coffee & snack shop", delay: 500, liveSite: "https://gorgeous-quokka-8403d8.netlify.app/"},
-                {id: "1", name: "Baby names picker", img: "https://picsum.photos/200/300", desc: "Pick a name for your newborn baby.Every name's origin and meaning is given on this fully responsive website", delay: 1000},
-                {id: "2", name: "25 + 5 clock", img: "https://picsum.photos/200/300", desc: "An appliction mostly for arranging your studying in the best way possible", delay: 1500}]  
+  const done = [{id: "0", name: "E-commerce", img: "https://picsum.photos/200/300", desc: "Fully responsive e-commerce site for ordering through net on a small local coffee & snack shop", delay: 500, liveSite: "https://splendid-granita-8f1e4f.netlify.app/", source: "https://github.com/Bill-1991/bill-commerce/tree/master"},
+                {id: "1", name: "Baby names picker", img: "https://picsum.photos/200/300", desc: "Pick a name for your newborn baby.Every name's origin and meaning is given on this fully responsive website", delay: 1000, liveSite: "", source: ""},
+                {id: "2", name: "25 + 5 clock", img: "https://picsum.photos/200/300", desc: "An appliction mostly for arranging your studying in the best way possible", delay: 1500, liveSite: "", source: ""}]  
 
   return (
     <Row className='projects'>{done.map(project => <Col xs={12} sm={6} md={6} lg={4}>
@@ -19,8 +19,8 @@ const Projects = () => {
         </div>
         <div className='card-back'>
           <Card.Title>{project.desc}</Card.Title>
-          <Button>Live</Button>
-          <Button>Source Code</Button>
+          <a href={project.liveSite} target="_blank" rel="noreferrer"><Button>Live</Button></a>
+          <a href={project.source} target="_blank" rel="noreferrer"><Button>Source Code</Button></a>
         </div>
         </Card>
         </Col>)}

@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import navIcon from "./navIcon.png"
-import fb from "./fb.png"
-import linked from "./linked.png"
-import git from "./git.png"
-import {Spring} from "react-spring/renderprops"
-import {Navbar} from "react-bootstrap"
-
+import navIcon from "./navIcon.png";
+import fb from "./fb.png";
+import linked from "./linked.png";
+import git from "./git.png";
+import {Spring} from "react-spring/renderprops";
+import {Navbar} from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 
@@ -26,11 +26,11 @@ const NavMob = (props) => {
            <div className='more'>
             <button onClick={props.handleMore}><img style={{width: "30px", height: "30px"}} src={navIcon} alt="navigation_icon" /></button>
            {props.more === true ? <Spring from={{height: 0}} to={{height: 150}} config={{duration: 300}}>{prop => <div style={prop} className='onmore' >
-           <Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1000}}>{proper => <button style={proper} onClick={props.handleHome}>Home</button>}</Spring>
-           <Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1050}}>{proper => <button style={proper} onClick={props.handleAbout}>About</button>}</Spring>
-           <Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1100}}>{proper => <button style={proper} onClick={props.handleProjects}>Projects</button>}</Spring>
-           <Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1150}}>{proper =><button style={proper} onClick={props.handleContact}>Contact</button>}</Spring>
-           <Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1200}}>{proper => <button style={proper} >Blog</button>}</Spring>
+           <Link to="/"><Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1000}}>{proper => <button style={proper}>Home</button>}</Spring></Link>
+           <Link to="/about"><Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1050}}>{proper => <button style={proper}>About</button>}</Spring></Link>
+           <Link to="/projects"><Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1100}}>{proper => <button style={proper}>Projects</button>}</Spring></Link>
+           <Link to="/contact"><Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1150}}>{proper =><button style={proper}>Contact</button>}</Spring></Link>
+           <Link to="/blog"><Spring from={{opacity: 0}} to={{opacity: 1}} config={{duration: 1200}}>{proper => <button style={proper} >Blog</button>}</Spring></Link>
            </div>}</Spring>: <Spring from={{height: 150}} to={{height: 0}} config={{duration: 300}}>{props => <div style={props}></div>}</Spring>}
            </div>
         </Navbar>   

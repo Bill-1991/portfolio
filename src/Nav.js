@@ -5,20 +5,20 @@ import {Row, Col, Navbar} from "react-bootstrap"
 import fb from "./fb.png"
 import linked from "./linked.png"
 import git from "./git.png"
-
+import { Link } from "react-router-dom"
 
 const Nav = (props) => {
   return (
     <Navbar className="bignav" style={{height: "100vh"}} sticky="top">
       <Row className="nav">
     <div className='d-grid'>    
-    <img className='me' onClick={props.handleHome} style={{borderRadius: "100%"}} src="https://picsum.photos/200/200" alt="me" />
+    <Link to="/"><img className='me' style={{borderRadius: "100%"}} src="https://picsum.photos/200/200" alt="me" /></Link>
     <h3>Vasileios Al</h3>
     <h4>Front-end developer!</h4>
     
-    <button className='mt-4' onClick={() => props.handleAbout()}>About</button>
-    <button onClick={props.handleProjects}>Projects</button>
-    <button onClick={props.handleContact}>Contact</button>
+    <Link to="/about"><button className='mt-4'>About</button></Link>
+    <Link to="/projects"><button>Projects</button></Link>
+    <Link to="/Contact"><button>Contact</button></Link>
     </div>
     
       

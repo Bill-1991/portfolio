@@ -1,3 +1,4 @@
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Container, Row, Col} from "react-bootstrap"
@@ -13,11 +14,6 @@ import emailjs from '@emailjs/browser';
 
 
 function App() { 
-  const [skip, setSkip] = useState(false)
-  const [home, setHome] = useState(true)
-  const [projects, setProjects] = useState(false)
-  const [about, setAbout] = useState(false)
-  const [contact, setContact] = useState(false)
   const [more, setMore] = useState(false)
   const [text, setText] = useState("")
   const [submit, setSubmit] = useState(false)
@@ -43,49 +39,6 @@ function App() {
       });
   };
   
-  const handleHome = () => {
-    if (home === false) {
-      setHome(true)
-      setProjects(false)
-      setAbout(false)
-      setMore(false)
-      setContact(false)
-      setSkip(false)
-    }
-  }
-
-  const handleProjects = () => {
-    if (projects === false) {
-      setProjects(true)
-      setHome(false)
-      setMore(false)
-      setAbout(false)
-      setContact(false)
-      setSkip(false)
-  }
-}
-
-const handleAbout = () => {
-  if (about === false) {
-    setAbout(true)
-    setHome(false)
-    setProjects(false)
-    setContact(false)
-    setMore(false)
-    setSkip(false)
-  }
-}
-
-const handleContact = () => {
-  if (contact === false) {
-    setContact(true)
-    setAbout(false)
-    setHome(false)
-    setProjects(false)
-    setMore(false)
-    setSkip(false)
-  }
-}
 
 const handleMore = () => {
   if (more === false) {
@@ -111,16 +64,20 @@ const handleEmailChange = (e) => {
 }
 
   return (
+    <HashRouter>
       <Container fluid style={{backgroundImage: `url(${second})`}} className="portfolio">    
         <Row>
-        <NavMob more={more} handleMore={handleMore} handleHome={handleHome} handleProjects={handleProjects} handleAbout={handleAbout} handleContact={handleContact} />
-        <Col sm={3}><Nav handleHome={handleHome} handleProjects={handleProjects} handleAbout={handleAbout} handleContact={handleContact} /></Col>         
-        {home === true ? <Col sm={9}><Home home={home} handleProjects={handleProjects} handleContact={handleContact}/></Col>  : 
-          projects === true ? <Col sm={9}><Projects /></Col> 
-          : about === true ? <Col sm={9}><About skip={skip} /></Col> 
-            : contact === true ? <Col sm={9}><Contact submit={submit} text={text} name={name} email={email} form={form} sendEmail={sendEmail} handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleTextChange={handleTextChange}/></Col> : undefined}
+        <NavMob more={more} handleMore={handleMore} />
+        <Col sm={3}><Nav /></Col>         
+        <Routes>
+          <Route exact path="/" element={<Col sm={9}><Home /></Col>} />
+          <Route exact path="/projects" element={<Col sm={9}><Projects /></Col>} /> 
+          <Route exact path="/about" element={<Col sm={9}><About /></Col>} />
+          <Route exact path="/contact" element={<Col sm={9}><Contact submit={submit} text={text} name={name} email={email} form={form} sendEmail={sendEmail} handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleTextChange={handleTextChange}/></Col>} />
+          </Routes>
             </Row>         
     </Container>
+    </HashRouter>
     );
 }
 
