@@ -5,6 +5,7 @@ import "./App.css";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
+
 const Home = (props) => {
     const animateHeader = [{letter: "H", delay: 50},
                          {letter: "i", delay: 100},

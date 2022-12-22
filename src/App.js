@@ -67,15 +67,20 @@ const handleEmailChange = (e) => {
     <HashRouter>
       <Container fluid style={{backgroundImage: `url(${second})`}} className="portfolio">    
         <Row>
-        <NavMob more={more} handleMore={handleMore} />
-        <Col sm={3}><Nav /></Col>         
+        <NavMob more={more} handleMore={handleMore}/>
+        <Col sm={3}><Nav /></Col>  
+        {more === true ? undefined :       
         <Routes>
+         
           <Route exact path="/" element={<Col sm={9}><Home /></Col>} />
           <Route exact path="/projects" element={<Col sm={9}><Projects /></Col>} /> 
           <Route exact path="/about" element={<Col sm={9}><About /></Col>} />
           <Route exact path="/contact" element={<Col sm={9}><Contact submit={submit} text={text} name={name} email={email} form={form} sendEmail={sendEmail} handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleTextChange={handleTextChange}/></Col>} />
+
           </Routes>
-            </Row>         
+}
+            </Row>
+                     
     </Container>
     </HashRouter>
     );

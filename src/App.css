@@ -99,6 +99,7 @@
     display: none !important;
 }
 
+
 .home button{
     background-color: rgba(0,0,0,0) !important;
     font-size: 20px !important;
@@ -300,54 +301,80 @@
     }
 
     .navmob{
+        width: 100% !important;
         display: grid !important;
-        align-items: start !important;
-        grid-template-columns: 65% 35%;
-        background-color: rgba(100,150,150,0.8);
-    }
-    
-    .navmob .mobsocial img{
-        width: 20px;
-        height: 20px;
-     }
-     
-     .mobsocial h5{
-        transform: translateY(10%);
+        position: sticky !important;
+        top: 0;
+         
     }
 
-    .navmob button{
-        background-color: rgba(0,0,0,0);
+    .navmob .name{
+        font-family: 'Times New Roman', Times, serif;
+        color: gold;
+        font-size: 20px;
+        align-self: center;
+    }
+
+    .navmob img{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        animation: anime 1s ease-in;
+    }
+    
+    .navmob .mobsocial .onsocial{
+        background-color: rgba(15, 122, 145, 0);
         border: none;
     }
 
-    .navmob button:hover{
-        color: rgba(250,255,255,1);
-    }
-
-    .navmob .more{
-        transition: height 0.5s ;
-        display:grid;
-        justify-self: end;   
-    }
-
-    .navmob .more button{
-        justify-self: end;
-    }
-
     .navmob .onmore{
-        display:grid;
-       
+        height: 63vh !important;
+        display: grid;
+        grid-template-rows: repeat(5, 15%);
+        gap: 5%;
+        justify-content: center;
     }
+    
 
     .navmob .onmore button{
-        font-size: 16px;
-        color: rgba(230, 250, 30, 1);
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        background-color: rgba(15, 122, 145, 0);
+        color: black;
+        font-size: 18px;
+        overflow: hidden;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: 
+           typing 1s steps(10, end),
+           blink-caret .5s step-end 3;
     }
 
     .navmob .onmore button:hover{
-        color: white;
+        background-color:rgba(0, 0, 0, .8);
+        color: azure;
     }
     
+    .navmob .quotes{
+        height: 30vh !important;
+        align-self: end !important;
+        animation: anime 1s 1 ease-in;
+    }
+
+    .navmob .quotes h3{
+        font-family: 'Brush Script MT';
+        font-size: 28px;
+        color:rgba(220, 220, 220, 1)
+    }
+
+    .navmob .quotes h4{
+        font-family: 'Monaco';
+        font-size: 100%;
+    }
+
     .about .intro{
         display: grid;
         justify-content: center;
@@ -394,3 +421,19 @@
         opacity: 1
     }
  }
+
+ @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  /*@keyframes orbit { 
+    0% { transform: rotate(0deg) } 
+    80% { transform: rotate(360deg) }
+    100% { transform: rotate(270%) } 
+    }*/
