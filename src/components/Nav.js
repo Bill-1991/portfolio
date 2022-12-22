@@ -1,12 +1,12 @@
 import React from 'react'
-import './App.css';
+import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Row, Col, Navbar} from "react-bootstrap"
-import fb from "./fb.png"
-import linked from "./linked.png"
-import git from "./git.png"
+import fb from "../assets/fb.png"
+import linked from "../assets/linked.png"
+import git from "../assets/git.png"
 import { Link } from "react-router-dom"
-import me from "./ME.jpg"
+import me from "../assets/ME.jpg"
 
 const Nav = (props) => {
   return (

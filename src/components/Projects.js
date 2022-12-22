@@ -1,7 +1,7 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Col, Row, Card, Button} from "react-bootstrap"
-import "./App.css"
+import "../App.css"
 //import { Spring } from "react-spring/renderprops"
 
 

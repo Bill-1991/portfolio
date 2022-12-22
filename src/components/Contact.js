@@ -8,7 +8,7 @@ const Contact = (props) => {
 
   return (
     
-    <Row className='contact' id="contact" style={{position: "relative"}}>
+    <Row className='contact' id="contact">
         <Container className="contacts">
       <h3>Facebook:    ________</h3>
       <h3>Twitter:     ________</h3>

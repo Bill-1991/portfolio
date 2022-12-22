@@ -1,13 +1,13 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Col, Row} from "react-bootstrap"
-import "./App.css"
-import js from "./js.png"
-import html from "./html.png"
-import scss from "./scss.png"
-import css from "./css.png"
-import bootstrap from "./bootstrap.gif"
-import react from "./react.webp"
+import "../App.css"
+import js from "../assets/js.png"
+import html from "../assets/html.png"
+import scss from "../assets/scss.png"
+import css from "../assets/css.png"
+import bootstrap from "../assets/bootstrap.gif"
+import react from "../assets/react.webp"
 import {useState} from "react"
 //import { clear } from '@testing-library/user-event/dist/clear';
 

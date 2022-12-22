@@ -1,7 +1,7 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Spring } from "react-spring/renderprops"
-import "./App.css";
+import "../App.css";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import fb from "./fb.png";
-import linked from "./linked.png";
-import git from "./git.png";
+import fb from "../assets/fb.png";
+import linked from "../assets/linked.png";
+import git from "../assets/git.png";
 //import {Spring} from "react-spring/renderprops";
 import {Container, Row} from "react-bootstrap";
 import { Link } from "react-router-dom";
-import inspire from "./inspire.jpg";
+import inspire from "../assets/inspire.jpg";
 
 
 const NavMob = (props) => {

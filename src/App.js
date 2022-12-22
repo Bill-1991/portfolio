@@ -2,14 +2,14 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Container, Row, Col} from "react-bootstrap"
-import second from "./second.jpg"
+import second from "./assets/second.jpg"
 import {useState, useRef} from "react"
-import Home from "./Home";
-import Projects from "./Projects";
-import About from "./About";
-import Nav from "./Nav"
-import NavMob from "./NavMob"
-import Contact from "./Contact"
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import Nav from "./components/Nav"
+import NavMob from "./components/NavMob"
+import Contact from "./components/Contact"
 import emailjs from '@emailjs/browser';
 
 
@@ -67,7 +67,7 @@ const handleEmailChange = (e) => {
     <HashRouter>
       <Container fluid style={{backgroundImage: `url(${second})`}} className="portfolio">    
         <Row>
-        <NavMob more={more} handleMore={handleMore}/>
+        <NavMob className="appnavmob" more={more} handleMore={handleMore}/>
         <Col sm={3}><Nav /></Col>  
         {more === true ? undefined :       
         <Routes>
