@@ -10,41 +10,30 @@ import { Link } from "react-router-dom";
 import inspire from "../assets/inspire.jpg";
 
 
+
 const NavMob = (props) => {
   const navStyle = props.more === false ? {
-    backgroundColor: "rgba(100,150,150,0)",
+    background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%)",
     gridTemplateRows: "63vh 30vh",
-    width: "0",
-    transition: "width 0.3s ease"
+    height: "0",
+    transition: "height 0.8s ease-in-out"
   } : {
-    backgroundColor: "rgba(100,150,150,0)",
+    background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%)",
     gridTemplateRows: "63vh 30vh", 
-    width: "100%",
-    transition: "width 0.3s ease-in-out",
-    backgroundImage: `url(${inspire})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover"
-  }
-
-  const navquote = props.more === false ? {
-    width: "100%",
-    gridTemplateRows: "80% 20%",
-    alignItems: "end"
-  } : {
-    width: "100%",
-    position: "relative",
-    gridTemplateRows: "80% 20%",
-    alignItems: "end"
+    height: "100%",
+    transition: "height 0.5s ease-in-out",
   }
 
   const navdots = props.more === false ? {
-    width: "30px",
     display: "flex",
     gap: "5px",
+    transform: "rotate(0)",
+    transition: "transform 0.8s ease-in-out"
   } : {
-    width: "30px",
     display: "flex",
     gap: "5px",
+    transform: "rotate(270deg)",
+    transition: "transform 0.5s ease-in-out",
   }
   
   let [quote, setQuote] = useState([]);
@@ -59,7 +48,7 @@ const NavMob = (props) => {
 
   return (
     <Container fluid className="navmob"  style={{height: props.more === true ? "100vh" : "7vh", gridTemplateRows: props.more === true ? "7% 93%" : undefined}}> 
-        <Row className="mobsocial" style={{backgroundColor: props.more === true ? "rgba(100,150,150,1)" : "rgba(100,150,150,0.8)", display: "grid", gridTemplateColumns: "75% 25%", height: "7vh"}}>
+        <Row className="mobsocial" style={{display: "grid", gridTemplateColumns: "75% 25%", height: "7vh"}}>
           <div style={{width: "100%", display: "flex", gap: "5px", position: "relative", top: "5px", height: "5vh"}}>
           <h5 className="name">Bill Altze</h5>
           <a href="https://www.facebook.com/vasilis.altzerinis/" target="_blank" rel="noreferrer"><img className='facebook' src={fb} alt="facebook" /></a>
@@ -67,7 +56,7 @@ const NavMob = (props) => {
           <a href="https://github.com/Bill-1991" target="_blank" rel="noreferrer"><img className='github' src={git} alt="GitHub" /></a>
           </div>
           <div style={{justifySelf: "end"}}>
-          <button className="onsocial" style={{position: "relative", top: "5px"}} onClick={props.handleMore}><div className="dots" style={navdots}><h3>.</h3><h3>.</h3><h3>.</h3></div></button>
+          <button className="onsocial" style={{position: "relative", top: "5px"}} onClick={props.handleMore}><div className="dots" style={navdots}><h3 className="first-dot">.</h3><h3 className="sec-dot">.</h3><h3 className="third-dot">.</h3></div></button>
            </div>
            </Row>
           <Row>
@@ -84,9 +73,9 @@ const NavMob = (props) => {
             : <div className="offmore"></div>
 }
           
-          {props.more === true ? <div className="quotes d-grid" style={navquote}>
-            <strong><h3 style={{color: "black"}}>{quote[random].text}</h3></strong>
-           <strong><h4 style={{color: "black"}}>{quote[random].author}</h4></strong>
+          {props.more === true ? <div className="quotes">
+            <strong><h3>{quote[random].text}</h3></strong>
+           <strong><h4>{quote[random].author}</h4></strong>
            </div> : undefined} 
            </Container>
            </Row>

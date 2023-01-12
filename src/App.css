@@ -314,8 +314,12 @@
     }
 
     .navmob img{
-        width: 100%;
-        height: 100%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .navmob .mobsocial{
+        background: linear-gradient(90deg, rgba(2,0,36,0.9) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%);
     }
     
     .navmob .mobsocial .onsocial{
@@ -337,7 +341,7 @@
         border-right: none;
         border-top: none;
         background-color: rgba(15, 122, 145, 0);
-        color: black;
+        color: gold;
         font-size: 18px;
         overflow: hidden;
         border-right: .15em solid orange;
@@ -350,8 +354,8 @@
     }
 
     .navmob .onmore button:hover{
-        background-color:rgba(0, 0, 0, .8);
-        color: azure;
+        background-color: gold;
+        color: orangered;
     }
     
     .navmob .quotes{
@@ -361,14 +365,15 @@
     }
 
     .navmob .quotes h3{
-        font-family: 'Brush Script MT';
+        font-family:'Times New Roman', Times, serif;
         font-size: 28px;
-        color:rgba(220, 220, 220, 1)
+        color: white !important
     }
 
     .navmob .quotes h4{
         font-family: 'Monaco';
         font-size: 100%;
+        color: red !important
     }
 
     .about .intro{
@@ -428,8 +433,7 @@
     50% { border-color: orange; }
   }
 
-  /*@keyframes orbit { 
-    0% { transform: rotate(0deg) } 
-    80% { transform: rotate(360deg) }
-    100% { transform: rotate(270%) } 
-    }*/
+  @keyframes orbit { 
+    from {transform: rotate(0)}
+    to {transform: rotate(270deg)} 
+    }
