@@ -7,7 +7,6 @@ import git from "../assets/git.png";
 //import {Spring} from "react-spring/renderprops";
 import {Container, Row} from "react-bootstrap";
 import { Link } from "react-router-dom";
-import inspire from "../assets/inspire.jpg";
 
 
 
