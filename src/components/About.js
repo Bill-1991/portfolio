@@ -1,6 +1,6 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Col, Row} from "react-bootstrap"
+import {Row} from "react-bootstrap"
 import "../App.css"
 import js from "../assets/js.png"
 import html from "../assets/html.png"
