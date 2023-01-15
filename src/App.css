@@ -176,32 +176,53 @@
 .about{
     background-color: #282c34;
     color:rgba(220, 220, 220, 1);
+    display: grid !important;
+    grid-template-rows: 60% 18% 22%;
     text-align: center;
     min-height: 100vh;
     justify-content: center;
 }
 
-.about .intro img{
-    display: none;
-    width: 100%;
+.about .intro{
     height: 100%;
-    border-radius: 50%;
+    display: grid !important;
+    grid-template-rows: 10% 90%;
+    width: 100% !important;
+    align-self: start !important;
 }
 
-.about .intro{
-    align-self: start !important;
+.about .intro .intro-par{
+    display: flex;
+    align-items: center;
+}
+
+.about .intro .intro-par img{
+    width: 40%;
+    height: 100% !important;
 }
 
 .about .known{
     display: grid;
-    grid-template-columns: repeat(6, 15%);
+    grid-template-rows: 1% 20% 79%;
+}
+
+.about .known .skills{
+    width: 100% !important;
+    height: 100% !important;
+    display: grid;
+    grid-template-columns: repeat(6, 10%);
     justify-content: center;
-    gap: 2%
+    gap: 8%;
+    align-items: center;
 }
 
 .about .known img{
     width: 100%;
-    height: 100%
+    height: 60% !important;
+}
+
+.about .conclusion{
+    
 }
 
 .contact{
@@ -286,6 +307,25 @@
     .portfolio {
         background-position: right;
     }
+
+    .about{
+        height: 100vh !important;
+    }
+
+    .about .intro{
+        display: grid !important;
+        justify-content: center;
+    }
+
+    .about .intro .intro-par{
+        display: grid !important;
+    }
+
+    .about .intro img{
+        width: 50% !important;
+        height: 70% !important;
+        justify-self: center;
+    }
 }
 
 @media only screen and (max-width: 576px) { 
@@ -319,7 +359,8 @@
     }
 
     .navmob .mobsocial{
-        background: linear-gradient(90deg, rgba(2,0,36,0.9) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%);
+        align-items: center;
     }
     
     .navmob .mobsocial .onsocial{
@@ -366,7 +407,7 @@
 
     .navmob .quotes h3{
         font-family:'Times New Roman', Times, serif;
-        font-size: 28px;
+        font-size: 20px;
         color: white !important
     }
 
@@ -376,13 +417,27 @@
         color: red !important
     }
 
+    .about{
+        height: 100vh !important;
+    }
+
     .about .intro{
-        display: grid;
+        display: grid !important;
         justify-content: center;
     }
 
+    .about .intro .intro-par{
+        display: grid !important;
+        font-size: 10px;
+    }
+
+    .about p{
+        font-size: 10px;
+    }
+
     .about .intro img{
-        display:block;
+        width: 70% !important;
+        height: 100% !important;
         justify-self: center;
     }
     

@@ -15,24 +15,24 @@ const NavMob = (props) => {
     background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%)",
     gridTemplateRows: "63vh 30vh",
     height: "0",
-    transition: "height 0.8s ease-in-out"
+    transition: "height 0.4s ease-in-out"
   } : {
     background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%)",
     gridTemplateRows: "63vh 30vh", 
     height: "100%",
-    transition: "height 0.5s ease-in-out",
+    transition: "height 0.2s ease-in-out",
   }
 
   const navdots = props.more === false ? {
     display: "flex",
     gap: "5px",
     transform: "rotate(0)",
-    transition: "transform 0.8s ease-in-out"
+    transition: "transform 0.4s ease-in-out"
   } : {
     display: "flex",
     gap: "5px",
     transform: "rotate(270deg)",
-    transition: "transform 0.5s ease-in-out",
+    transition: "transform 0.2s ease-in-out",
   }
   
   let [quote, setQuote] = useState([]);
@@ -55,7 +55,7 @@ const NavMob = (props) => {
           <a href="https://github.com/Bill-1991" target="_blank" rel="noreferrer"><img className='github' src={git} alt="GitHub" /></a>
           </div>
           <div style={{justifySelf: "end"}}>
-          <button className="onsocial" style={{position: "relative", top: "5px"}} onClick={props.handleMore}><div className="dots" style={navdots}><h3 className="first-dot">.</h3><h3 className="sec-dot">.</h3><h3 className="third-dot">.</h3></div></button>
+          <button className="onsocial" style={{position: "relative"}} onClick={props.handleMore}><div className="dots" style={navdots}><h3 className="first-dot">.</h3><h3 className="sec-dot">.</h3><h3 className="third-dot">.</h3></div></button>
            </div>
            </Row>
           <Row>
