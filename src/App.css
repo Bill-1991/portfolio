@@ -174,8 +174,9 @@
 }
 
 .about{
-    background-color: #282c34;
-    color:rgba(220, 220, 220, 1);
+    /*background-color: #282c34;*/
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,121,91,1) 46%, rgba(0,151,255,1) 100%);
+    color:rgba(0, 50, 0, 1);
     display: grid !important;
     grid-template-rows: 60% 18% 22%;
     text-align: center;
@@ -189,11 +190,13 @@
     grid-template-rows: 10% 90%;
     width: 100% !important;
     align-self: start !important;
+    color:rgba(200, 182, 250, 1)
 }
 
 .about .intro .intro-par{
     display: flex;
     align-items: center;
+    color:rgba(200, 182, 250, 1) !important;
 }
 
 .about .intro .intro-par img{
@@ -204,6 +207,10 @@
 .about .known{
     display: grid;
     grid-template-rows: 1% 20% 79%;
+}
+
+.about .known h6{
+    color:rgba(250, 250, 250, 1) !important;
 }
 
 .about .known .skills{
@@ -222,7 +229,8 @@
 }
 
 .contact{
-    background-color: #282c34;
+    /*background-color: #282c34;*/
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     color:rgba(220, 220, 220, 1);
     min-height: 100vh;
     height: fit-content !important;
@@ -315,7 +323,6 @@
 
     .about .intro .intro-par{
         display: grid !important;
-        
     }
 
     .about .intro img{
@@ -363,6 +370,20 @@
     .navmob .mobsocial .onsocial{
         background-color: rgba(15, 122, 145, 0);
         border: none;
+    }
+
+    .navmob .allmore{
+        display: grid !important;
+        grid-template-columns: 50% 50%;
+    }
+
+    .navmob .allmore img{
+        width: 90% !important;
+        height: 150px;
+        justify-self: center;
+        align-self: start;
+        border-radius: 100%;
+        animation: anime 1s 1 ease-in-out;
     }
 
     .navmob .onmore{
@@ -425,15 +446,15 @@
 
     .about .intro .intro-par{
         display: grid !important;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .about p{
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .about .intro img{
-        width: 70% !important;
+        width: 50% !important;
         height: 100% !important;
         justify-self: center;
     }

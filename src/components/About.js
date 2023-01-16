@@ -41,7 +41,7 @@ const About = (props) => {
       <strong><h3 className='welcome'>Welcome to my portfolio!!!</h3></strong>
       <div className="intro-par">
       <img src="https://picsum.photos/300/300" alt="me" />
-      <p>I'm Vasileios ________.I'm born and currently located in Greece!I'm a self-taught web developer pursuing my dream of entering web development,mainly on front-end for now...I love <strong>Coding</strong> and it's a big part in my life!</p>
+      <p>I'm Vasileios ________.I'm born and currently located in Greece!I'm a self-taught web developer pursuing my dream of entering web development,mainly on front-end for now...I love <strong style={{color: "white"}}>Coding</strong> and it's a big part in my life!</p>
       </div>
       </div>
       
@@ -59,7 +59,7 @@ const About = (props) => {
       <p>I would love for you to give me any project you have in mind
            I will try my best possible and will deliver everything you ask,be it a one page website or a larger scale project!</p>
            
-      <p>Thank you for checking my portfolio.The source code of it is <strong><a href="https://github.com/Bill-1991/portfolio/branches" target="_blank" rel="noreferrer"><p>here</p></a></strong></p>
+      <p>Thank you for checking my portfolio.The source code of it is <strong><a href="https://github.com/Bill-1991/portfolio/branches" target="_blank" rel="noreferrer"><p style={{color: "black"}}>here</p></a></strong></p>
   </div>
   </Row>
   )

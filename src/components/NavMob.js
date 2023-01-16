@@ -7,6 +7,7 @@ import git from "../assets/git.png";
 //import {Spring} from "react-spring/renderprops";
 import {Container, Row} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import me from "../assets/ME.jpg"
 
 
 
@@ -60,7 +61,9 @@ const NavMob = (props) => {
            </Row>
           <Row>
           <Container fluid className="premore d-grid" style={navStyle}>
-           {props.more === true ?           
+           {props.more === true ?
+           <div className="allmore d-flex">
+            <img className="me" src={me} alt="Vasileios" />
            <div className='onmore'>
            <Link to="/"><button onClick={props.handleMore} ><strong>Home</strong></button></Link>
            <Link to="/about"><button onClick={props.handleMore} ><strong>About</strong></button></Link>
@@ -68,7 +71,7 @@ const NavMob = (props) => {
            <Link to="/contact"><button onClick={props.handleMore} ><strong>Contact</strong></button></Link>
            <Link to="/blog"><button onClick={props.handleMore} ><strong>Blog</strong></button></Link>
            </div>
-           
+           </div>
             : <div className="offmore"></div>
 }
           
