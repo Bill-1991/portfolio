@@ -305,7 +305,7 @@
     }
 
     .about{
-        height: 100vh !important;
+        min-height: 100vh !important;
     }
 
     .about .intro{
@@ -315,6 +315,7 @@
 
     .about .intro .intro-par{
         display: grid !important;
+        
     }
 
     .about .intro img{
@@ -414,7 +415,7 @@
     }
 
     .about{
-        height: 100vh !important;
+        min-height: 100vh;
     }
 
     .about .intro{
