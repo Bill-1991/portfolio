@@ -237,12 +237,17 @@
 }
 
 .contact .contacts{
-    align-content: start !important
+    align-self: center !important;
+    background-color: #282c34;
 }
 
+.contact .contacts h6{
+    font-size: 18px;
+}
 
 .contact .form{
     display: grid;
+    width: 50%;
 }
 
 .contact .submit:hover{
@@ -329,6 +334,10 @@
         width: 50% !important;
         height: 70% !important;
         justify-self: center;
+    }
+
+    .contact .form{
+        width: 80% !important
     }
 }
 
