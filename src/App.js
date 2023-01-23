@@ -20,6 +20,15 @@ function App() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const form = useRef();
+  const [displayNav, setDisplayNav] = useState(true)
+
+  const handleDisplayNav = () => {
+    if (displayNav === true){
+      setDisplayNav(false)
+    } else{
+      setDisplayNav(true)
+    }
+  }
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -68,17 +77,29 @@ const handleEmailChange = (e) => {
       <Container fluid style={{backgroundImage: `url(${second})`}} className="portfolio">    
         <Row>
         <NavMob className="appnavmob" more={more} handleMore={handleMore}/>
-        <Col sm={3}><Nav /></Col>  
+        { displayNav === true ? <Col sm={3}><Nav /></Col> : undefined }   
         {more === true ? undefined :       
         <Routes>
          
-          <Route exact path="/" element={<Col sm={9}><Home /></Col>} />
-          <Route exact path="/projects" element={<Col sm={9}><Projects /></Col>} /> 
-          <Route exact path="/about" element={<Col sm={9}><About /></Col>} />
-          <Route exact path="/contact" element={<Col sm={9}><Contact submit={submit} text={text} name={name} email={email} form={form} sendEmail={sendEmail} handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleTextChange={handleTextChange}/></Col>} />
+          <Route exact path="/" element={<Col><Home /></Col>} />
+          <Route exact path="/projects" element={<Col><Projects /></Col>} /> 
+          <Route exact path="/about" element={<Col><About /></Col>} />
+          <Route exact path="/contact" element={<Col><Contact submit={submit} text={text} name={name} email={email} form={form} sendEmail={sendEmail} handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleTextChange={handleTextChange}/></Col>} />
 
           </Routes>
-}
+       }
+
+        { displayNav === true ?
+        <div className='hidenav'>
+          <p>{"<==="}</p>
+          <button className='hide' style={{backgroundColor: "rgba(0,0,0,0)", border: "none", color: "gold"}} onClick={handleDisplayNav}>Hide</button>
+        </div>
+        : 
+        <div className='dispnav'>
+          <button onClick={handleDisplayNav} className='show' style={{backgroundColor: "rgba(0,0,0,0)", border: "none", color: "gold"}}>Show</button>
+          <p>{"===>"}</p>
+        </div>
+        }
             </Row>
                      
     </Container>
