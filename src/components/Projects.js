@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Col, Row, Card, Button} from "react-bootstrap"
 import "../App.css"
-import vid1 from "../assets/commercevid.mp4"
+import vid1 from "../assets/commercevid1.mp4"
 //import { Spring } from "react-spring/renderprops"
 
 
