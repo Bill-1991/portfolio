@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Container, Row, Col, Navbar} from "react-bootstrap"
+import {Row, Col, Navbar} from "react-bootstrap"
 import fb from "../assets/fb.png"
 import linked from "../assets/linked.png"
 import git from "../assets/git.png"
@@ -9,10 +9,6 @@ import { Link } from "react-router-dom"
 import me from "../assets/ME.jpg"
 
 const Nav = (props) => {
-  
-  const style = {
-    visibility: props.displayNav === true ? "visible" : "hidden"
-  }
 
   return (
     <Navbar className="bignav" style={{height: "100vh"}} sticky="top">
