@@ -8,21 +8,20 @@ import scss from "../assets/scss.png"
 import css from "../assets/css.png"
 import bootstrap from "../assets/bootstrap.gif"
 import react from "../assets/react.webp"
-import {useState} from "react"
 //import { clear } from '@testing-library/user-event/dist/clear';
 
 
-const About = (props) => {
-  const [skills, setSkills] = useState([{src: html, alt :"html"},
+const About = () => {
+  const skills = [{src: html, alt :"html"},
   {src: css, alt: "css"},
   {src: scss, alt: "scss"},
   {src: bootstrap, alt: "bootstrap"},
   {src: js, alt: "javascript"},
   {src: react, alt: "react"}
-  ])
+  ]
  
   
-  setTimeout(() => {
+  /*setTimeout(() => {
     
     let arr = skills
     let skill = skills.pop()
@@ -31,7 +30,7 @@ const About = (props) => {
     
   }, 1000)
   
-  clearInterval()
+  clearInterval()*/
   return (
     
     <Row className="about">
@@ -59,7 +58,7 @@ const About = (props) => {
       <p>I would love for you to give me any project you have in mind
            I will try my best possible and will deliver everything you ask,be it a one page website or a larger scale project!</p>
            
-      <p>Thank you for checking my portfolio.The source code of it is <strong><a href="https://github.com/Bill-1991/portfolio/branches" target="_blank" rel="noreferrer"><p style={{color: "black"}}>here</p></a></strong></p>
+      <p>Thank you for checking my portfolio.The source code of it is <strong><a href="https://github.com/Bill-1991/portfolio/branches" target="_blank" rel="noreferrer" style={{color: "black"}}>here</a></strong></p>
   </div>
   </Row>
   )
