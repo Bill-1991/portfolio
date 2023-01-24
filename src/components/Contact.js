@@ -26,7 +26,7 @@ const Contact = (props) => {
 </Container>
     <Container className='form mt-5'>
    
-    <Form ref={props.form} onSubmit={props.sendEmail}>
+    <Form ref={props.form} className="d-grid" onSubmit={props.sendEmail}>
         <Form.Group className='mt-3' style={{color: "#282c34"}}>
             <Form.Label>E-mail adress</Form.Label>
             <Form.Control id="email" value={props.email} name="user_email" type="email" onChange={props.handleEmailChange} placeholder="enter your e-mail" style={{backgroundColor: "#282c34", color: "white"}} />
