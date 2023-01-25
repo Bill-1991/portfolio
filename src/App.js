@@ -77,7 +77,7 @@ const handleEmailChange = (e) => {
       <Container fluid style={{backgroundImage: `url(${second})`}} className="portfolio">    
         <Row>
         <NavMob className="appnavmob" more={more} handleMore={handleMore}/>
-        { displayNav === true ? <Col sm={3}><Nav /></Col> : undefined }   
+        { displayNav === true ? <Col className='shownNav' sm={3}><Nav /></Col> : <div className="hiddenNav"></div> }   
         {more === true ? undefined :       
         <Routes>
          
@@ -100,8 +100,7 @@ const handleEmailChange = (e) => {
           <p>{"===>"}</p>
         </div>
         }
-            </Row>
-                     
+        </Row>            
     </Container>
     </HashRouter>
     );
