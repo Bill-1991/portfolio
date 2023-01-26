@@ -27,7 +27,7 @@ const Projects = () => {
   }
 
   return (
-    <Row className='projects'>{done.map(project => <Col xs={12} sm={6} md={6} lg={4} key={project.id}>
+    <Row className='projects' style={{position: "relative"}}>{done.map(project => <Col xs={12} sm={6} md={6} lg={4} key={project.id}>
       <Card className={project.flip === false ? "card" : "cardflip"}>
         { project.flip === false ?
         <div className="card-front">

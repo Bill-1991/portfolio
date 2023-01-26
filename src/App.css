@@ -3,6 +3,7 @@
     min-height: 100vh;
     height: fit-content;
     min-width: fit-content;
+    position: relative !important
 }
 
 .portfolio .hidenav{
@@ -65,7 +66,6 @@
     min-height: 100vh;
     height: fit-content;
     background-color: rgba(15, 122, 145, 0.9);
-    z-index: 0;
 }
 
 .nav .social .face .popuptext{
@@ -131,7 +131,6 @@
 }
 
 .nav button:hover{
-    
     color: black;
 }
 
@@ -475,7 +474,6 @@
         display: grid !important;
         position: sticky !important;
         top: 0 !important;
-        z-index: 1; 
     }
 
     .navmob .name{
@@ -582,8 +580,8 @@
     }
 
     .about .intro img{
-        width: 50% !important;
-        height: 100% !important;
+        width: 150px !important;
+        height: 200px !important;
         justify-self: center;
     }
 
@@ -591,7 +589,6 @@
         width: 35px !important;
         height: 35px !important;
     }
-    
 }
 
 

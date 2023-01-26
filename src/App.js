@@ -79,7 +79,7 @@ const handleEmailChange = (e) => {
         <NavMob className="appnavmob" more={more} handleMore={handleMore}/>
         { displayNav === true ? <Col className='shownNav' sm={3}><Nav /></Col> : <div className="hiddenNav"></div> }   
         {more === true ? undefined :       
-        <Routes>
+        <Routes style={{zIndex: "2"}}>
          
           <Route exact path="/" element={<Col><Home /></Col>} />
           <Route exact path="/projects" element={<Col><Projects /></Col>} /> 

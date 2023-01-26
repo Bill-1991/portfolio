@@ -48,7 +48,7 @@ const NavMob = (props) => {
 
   return (
     <Container fluid className="navmob"  style={{height: props.more === true ? "100vh" : "7vh", gridTemplateRows: props.more === true ? "7% 93%" : undefined}}> 
-        <Row className="mobsocial" style={{display: "grid", gridTemplateColumns: "75% 25%", height: "7vh"}}>
+        <Row className="mobsocial" style={{display: "grid", gridTemplateColumns: "75% 25%", height: "7vh", position: "relative"}}>
           <div style={{width: "100%", display: "flex", gap: "5px", position: "relative", top: "5px", height: "5vh"}}>
           <h5 className="name">Bill Altze</h5>
           <a href="https://www.facebook.com/vasilis.altzerinis/" target="_blank" rel="noreferrer"><img className='facebook' src={fb} alt="facebook" /></a>
