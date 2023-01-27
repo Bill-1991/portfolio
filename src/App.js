@@ -77,18 +77,16 @@ const handleEmailChange = (e) => {
       <Container fluid style={{backgroundImage: `url(${second})`}} className="portfolio">    
         <Row>
         <NavMob className="appnavmob" more={more} handleMore={handleMore}/>
-        { displayNav === true ? <Col className='shownNav' sm={3}><Nav /></Col> : <div className="hiddenNav"></div> }   
-        {more === true ? undefined :       
-        <Routes style={{zIndex: "2"}}>
-         
+        { displayNav === true ? <Col className='shownNav' sm={3}><Nav /></Col> : <div className="hiddenNav"></div> }         
+        {more === true ? null : 
+        <Routes>
           <Route exact path="/" element={<Col><Home /></Col>} />
           <Route exact path="/projects" element={<Col><Projects /></Col>} /> 
           <Route exact path="/about" element={<Col><About /></Col>} />
           <Route exact path="/contact" element={<Col><Contact submit={submit} text={text} name={name} email={email} form={form} sendEmail={sendEmail} handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleTextChange={handleTextChange}/></Col>} />
 
           </Routes>
-       }
-
+         }
         { displayNav === true ?
         <div className='hidenav'>
           <p>{"<==="}</p>

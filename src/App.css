@@ -1,4 +1,5 @@
 .portfolio{
+    margin: 0;
     background-size: cover;
     min-height: 100vh;
     height: fit-content;
@@ -562,7 +563,7 @@
     }
 
     .about{
-        min-height: 100vh;
+        min-height: 93vh !important;
     }
 
     .about .intro{
@@ -580,7 +581,7 @@
     }
 
     .about .intro img{
-        width: 150px !important;
+        width: 200px !important;
         height: 200px !important;
         justify-self: center;
     }
@@ -588,6 +589,12 @@
     .about .known .skills img{
         width: 35px !important;
         height: 35px !important;
+    }
+
+    .contact {
+        position: absolute;
+        width: 100%;
+        min-height: 93vh
     }
 }
 
