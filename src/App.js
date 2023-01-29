@@ -21,6 +21,7 @@ function App() {
   const [email, setEmail] = useState("")
   const form = useRef();
   const [displayNav, setDisplayNav] = useState(true)
+  const [delayDisp, setDelayDisp] = useState(false)
 
   const handleDisplayNav = () => {
     if (displayNav === true){
@@ -52,8 +53,10 @@ function App() {
 const handleMore = () => {
   if (more === false) {
     setMore(true)
+    setDelayDisp(true)
   }else {
     setMore(false)
+    setTimeout(() => {setDelayDisp(false)}, 300)
   }
 }
 
@@ -74,11 +77,12 @@ const handleEmailChange = (e) => {
 
   return (
     <HashRouter>
-      <Container fluid style={{backgroundImage: `url(${second})`}} className="portfolio">    
+      <Container fluid style={{backgroundImage: `url(${second})`, position: "relative"}} className="portfolio">    
+        
+        <Row className='appnavmob'><NavMob more={more} handleMore={handleMore}/></Row>
         <Row>
-        <NavMob className="appnavmob" more={more} handleMore={handleMore}/>
         { displayNav === true ? <Col className='shownNav' sm={3}><Nav /></Col> : <div className="hiddenNav"></div> }         
-        {more === true ? null : 
+        {more === true && delayDisp === true ? null : more === false && delayDisp === false ?
         <Routes>
           <Route exact path="/" element={<Col><Home /></Col>} />
           <Route exact path="/projects" element={<Col><Projects /></Col>} /> 
@@ -86,6 +90,7 @@ const handleEmailChange = (e) => {
           <Route exact path="/contact" element={<Col><Contact submit={submit} text={text} name={name} email={email} form={form} sendEmail={sendEmail} handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleTextChange={handleTextChange}/></Col>} />
 
           </Routes>
+          : null
          }
         { displayNav === true ?
         <div className='hidenav'>
@@ -98,7 +103,7 @@ const handleEmailChange = (e) => {
           <p>{"===>"}</p>
         </div>
         }
-        </Row>            
+        </Row>
     </Container>
     </HashRouter>
     );

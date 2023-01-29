@@ -22,18 +22,21 @@ const NavMob = (props) => {
     gridTemplateRows: "63vh 30vh", 
     height: "100%",
     transition: "height 0.2s ease-in-out",
+    position: "relative"
   }
 
   const navdots = props.more === false ? {
     display: "flex",
     gap: "5px",
     transform: "rotate(0)",
-    transition: "transform 0.4s ease-in-out"
+    transition: "transform 0.4s ease-in-out",
+    zIndex: 200
   } : {
     display: "flex",
     gap: "5px",
     transform: "rotate(270deg)",
     transition: "transform 0.2s ease-in-out",
+    zIndex: 200
   }
   
   let [quote, setQuote] = useState([]);
@@ -47,7 +50,7 @@ const NavMob = (props) => {
   },[])
 
   return (
-    <Container fluid className="navmob"  style={{height: props.more === true ? "100vh" : "7vh", gridTemplateRows: props.more === true ? "7% 93%" : undefined}}> 
+    <Container fluid className="navmob"  style={{height: props.more === true ? "100vh" : "7vh", gridTemplateRows: props.more === true ? "7% 93%" : undefined, position: "relative"}}> 
         <Row className="mobsocial" style={{display: "grid", gridTemplateColumns: "75% 25%", height: "7vh", position: "relative"}}>
           <div style={{width: "100%", display: "flex", gap: "5px", position: "relative", top: "5px", height: "5vh"}}>
           <h5 className="name">Bill Altze</h5>
@@ -59,7 +62,7 @@ const NavMob = (props) => {
           <button className="onsocial" style={{position: "relative"}} onClick={props.handleMore}><div className="dots" style={navdots}><h3 className="first-dot">.</h3><h3 className="sec-dot">.</h3><h3 className="third-dot">.</h3></div></button>
            </div>
            </Row>
-          <Row>
+          <Row style={{position: "relative"}}>
           <Container fluid className="premore d-grid" style={navStyle}>
            {props.more === true ?
            <div className="allmore d-flex">
