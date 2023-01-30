@@ -478,6 +478,7 @@
     .appnavmob{
         position: sticky;
         top: 0;
+        z-index: 1;
     }
 
     .navmob{
@@ -572,6 +573,10 @@
         color: red !important
     }
 
+    .navmob .offmore{
+        pointer-events: none;
+    }
+
     .about{
         min-height: 93vh !important;
     }
@@ -612,10 +617,7 @@
     .contact .form .form-control{
         position: relative;
     }
-
-    /*.contact .contacts a{
-        z-index: 100 !important;
-    }*/
+   
 }
 
 
