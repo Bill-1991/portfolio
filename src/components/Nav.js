@@ -15,8 +15,7 @@ const Nav = (props) => {
       <Row className="nav">
     <div className='d-grid'>    
     <Link to="/"><img className='me' style={{borderRadius: "100%"}} src={me} alt="me" /></Link>
-    <h3>Vasileios Al</h3>
-    <h4>Front-end developer!</h4>
+    <h3>Vasileios Altzerinis</h3>
     
     <Link to="/about"><button className='mt-4'>About</button></Link>
     <Link to="/projects"><button>Projects</button></Link>
