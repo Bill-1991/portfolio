@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+//import React, { useState } from 'react';
 import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import fb from "../assets/fb.png";
@@ -30,24 +30,23 @@ const NavMob = (props) => {
     gap: "5px",
     transform: "rotate(0)",
     transition: "transform 0.4s ease-in-out",
-    zIndex: 200
   } : {
     display: "flex",
     gap: "5px",
     transform: "rotate(270deg)",
     transition: "transform 0.2s ease-in-out",
-    zIndex: 200
   }
   
-  let [quote, setQuote] = useState([]);
-  const random = Math.floor(Math.random() * 1643)
+  //let [quote, setQuote] = useState([]);
+  //const random = Math.floor(Math.random() * 50)
 
-  useEffect(() => {
-    fetch("https://type.fit/api/quotes")
+  /*useEffect(() => {
+    fetch("https://random-quote-generator.herokuapp.com/api/quotes")
     .then(res => res.json())
     .then(data => setQuote(data))
+  },[])*/
 
-  },[])
+  //console.log(quote);
 
   return (
     <Container fluid className="navmob"  style={{height: props.more === true ? "100vh" : "7vh", gridTemplateRows: props.more === true ? "7% 93%" : undefined, position: "relative"}}> 
@@ -77,11 +76,6 @@ const NavMob = (props) => {
            </div>
             : <div className="offmore"></div>
 }
-          
-          {props.more === true ? <div className="quotes">
-            <strong><h3>{quote[random].text}</h3></strong>
-           <strong><h4>{quote[random].author}</h4></strong>
-           </div> : undefined} 
            </Container>
            </Row>
         </Container>   
@@ -89,3 +83,8 @@ const NavMob = (props) => {
 }
 
 export default NavMob
+
+/*{props.more === true ? <div className="quotes">
+            <strong><h3>{quote[random].q}</h3></strong>
+           <strong><h4>{quote[random].a}</h4></strong>
+           </div> : undefined}*/ 
