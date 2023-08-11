@@ -483,7 +483,7 @@
 
     .navmob{
         width: 100% !important;
-        display: grid !important;
+        display: block !important;
         position: relative;
     }
 
@@ -511,25 +511,18 @@
     }
 
     .navmob .allmore{
+        height: 93vh !important;
         display: grid !important;
-        grid-template-columns: 50% 50%;
-    }
-
-    .navmob .allmore img{
-        width: 150px !important;
-        height: 150px;
-        justify-self: center;
-        align-self: start;
-        border-radius: 100%;
-        animation: anime 1s 1 ease-in-out;
+        grid-template-rows: 30% 70%;
     }
 
     .navmob .onmore{
-        height: 63vh !important;
+        height: 93vh !important;
         display: grid;
         grid-template-rows: repeat(5, 15%);
         gap: 5%;
         justify-content: center;
+        align-items: center;
     }
     
 

@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Row} from "react-bootstrap"
-import "../App.css"
-import js from "../assets/js.png"
-import html from "../assets/html.png"
-import scss from "../assets/scss.png"
-import css from "../assets/css.png"
-import bootstrap from "../assets/bootstrap.gif"
-import react from "../assets/react.webp"
+import {Row} from "react-bootstrap";
+import "../App.css";
+import js from "../assets/js.png";
+import html from "../assets/html.png";
+import scss from "../assets/scss.png";
+import css from "../assets/css.png";
+import bootstrap from "../assets/bootstrap.gif";
+import react from "../assets/react.webp";
+import me from "../assets/ME.jpg";
 //import { clear } from '@testing-library/user-event/dist/clear';
 
 
@@ -39,7 +40,7 @@ const About = () => {
     <div className='intro'>
       <strong><h3 className='welcome'>Welcome to my portfolio!!!</h3></strong>
       <div className="intro-par">
-      <img src="https://picsum.photos/300/300" alt="me" />
+      <img className="me" src={me} alt="Vasileios" />
       <p>I'm Vasileios ________.I'm born and currently located in Greece!I'm a self-taught web developer pursuing my dream of entering web development,mainly on front-end for now...I love <strong style={{color: "white"}}>Coding</strong> and it's a big part in my life!</p>
       </div>
       </div>
