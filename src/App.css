@@ -67,9 +67,7 @@
 .nav{
     text-align: center;
     justify-content: center;
-    align-items: start;
     min-height: 100vh;
-    height: fit-content;
     background-color: rgba(15, 122, 145, 0.9);
 }
 
@@ -82,6 +80,8 @@
     visibility: visible;
     background-color: black;
     color: white;
+    font-weight: 700;
+    font-style: oblique;
 }
 
 .nav .social .linked .popuptext{
@@ -93,6 +93,8 @@
     visibility: visible;
     background-color: black;
     color: white;
+    font-weight: 700;
+    font-style: oblique;
 }
 
 .nav .social .git .popuptext{
@@ -104,6 +106,8 @@
     visibility: visible;
     background-color: black;
     color: white;
+    font-weight: 700;
+    font-style: oblique;
 }
 
 .nav .social .twit .popuptext{
@@ -123,13 +127,15 @@
 }
 
 .me{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 80%;
 }
 
 .nav button {
     border: none;
     font-size: 20px;
+    font-weight: 700;
+    font-style: oblique;
     background-color: rgba(15, 122, 145, 0);
     color: rgba(220, 220, 220, 1);
     
@@ -151,15 +157,15 @@
     
 }
 
-
 .navmob{
     display: none !important;
 }
 
-
 .home button{
     background-color: rgba(0,0,0,0) !important;
     font-size: 20px !important;
+    font-weight: 700;
+    font-style: oblique;
 }
 
 .home button:hover{
@@ -172,7 +178,8 @@
     white-space: pre;
     text-decoration: underline;
     color: white;
-   
+    font-weight: 700;
+    font-style: oblique;
 }
 
 .projects{
@@ -180,6 +187,8 @@
     text-align: center;
     min-height: 100vh;
     height: fit-content !important;
+    font-weight: 700;
+    font-style: oblique;
 }
 
 .card{
@@ -212,7 +221,7 @@
 
 .card .card-front,
 .cardflip .card-front {
-    color: pink;
+    color: white;
     position: absolute;
     display: grid;
     grid-template-rows: 15% 55% 30%;
@@ -225,7 +234,6 @@
 .cardflip .card-back{
     width: 100% !important;
     justify-content: center;
-    color: pink;
     display: grid;
     grid-template-rows: 60% 15% 25%;
     position: absolute;
@@ -236,6 +244,7 @@
 .projects .skills{
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%);
     color: white !important;
+    font-size: 13px;
 }
 
 .projects .skills p{
@@ -272,6 +281,8 @@
     width: 45px;
     height: 45px;
     font-size: 11px;
+    font-weight: 900;
+    font-style: oblique;
     color: black;
 }
 
@@ -284,10 +295,11 @@
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,121,91,1) 46%, rgba(0,151,255,1) 100%);
     color:rgba(0, 50, 0, 1);
     display: grid !important;
-    grid-template-rows: 60% 18% 22%;
+    grid-template-rows: 53% 25% 22%;
     text-align: center;
     min-height: 100vh;
     justify-content: center;
+    font-style: oblique;
 }
 
 .about .intro{
@@ -299,6 +311,12 @@
     color:rgba(200, 182, 250, 1)
 }
 
+.about .intro .welcome{
+    font-weight: 900;
+    font-family: italic;
+    color:rgba(200, 182, 250, 1) !important;
+}
+
 .about .intro .intro-par{
     display: flex;
     align-items: center;
@@ -306,8 +324,14 @@
 }
 
 .about .intro .intro-par img{
-    width: 40%;
-    height: 100% !important;
+    width: 30%;
+    height: 95% !important;
+}
+
+.about .intro .intro-par p{
+    width: 80%;
+    font-weight: 700;
+    justify-self: center;
 }
 
 .about .known{
@@ -316,7 +340,7 @@
 }
 
 .about .known h6{
-    color:rgba(250, 250, 250, 1) !important;
+    color:rgba(200, 182, 250, 1) !important;
 }
 
 .about .known .skills{
@@ -334,17 +358,29 @@
     height: 60px !important;
 }
 
+.about .conclusion{
+    color:rgba(200, 182, 250, 1) !important;
+    width: 80%;
+    font-weight: 800;
+    justify-self: center;
+    align-self: center;
+}
+
 .contact{
     /*background-color: #282c34;*/
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     color:rgba(220, 220, 220, 1);
     min-height: 100vh;
     height: fit-content !important;
+    font-weight: 700;
+    font-style: oblique;
 }
 
 .contact .contacts{
     align-self: center !important;
     background-color: #282c34;
+    display: grid;
+    justify-content: center;
 }
 
 .contact .contacts h6{
@@ -357,6 +393,8 @@
 
 .contact .form .submit {
     justify-self: end;
+    font-weight: 800;
+    font-style: oblique;
 }
 
 .contact .submit:hover{
@@ -427,8 +465,21 @@
         background-position: right;
     }
 
+    .nav {
+        display: grid !important;
+        grid-template-rows: 30% 25% 35% !important;
+        gap: 5% !important;
+        
+    }
+
+    .me{
+        height: 80%
+    }
+
     .about{
         min-height: 100vh !important;
+        grid-template-rows: 55% 20% 25% !important;
+        font-size: 14px !important;
     }
 
     .about .intro{
@@ -456,6 +507,13 @@
 
     .contact .form{
         width: 80% !important
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .nav .me {
+        width: 100% !important;
+        height: 70%
     }
 }
 

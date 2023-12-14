@@ -49,38 +49,59 @@ const NavMob = (props) => {
 
   return (
     <Container fluid className="navmob"  style={{height: props.more === true ? "100vh" : "7vh", gridTemplateRows: props.more === true ? "7% 93%" : undefined, position: "relative"}}> 
-        <Row className="mobsocial" style={{display: "grid", gridTemplateColumns: "75% 25%", height: "7vh", position: "relative"}}>
-          <div style={{width: "100%", display: "flex", gap: "5px", position: "relative", top: "5px", height: "5vh"}}>
+      <Row className="mobsocial" style={{display: "grid", gridTemplateColumns: "75% 25%", height: "7vh", position: "relative"}}>
+        <div style={{width: "100%", display: "flex", gap: "5px", position: "relative", top: "5px", height: "5vh"}}>
           <h5 className="name">Bill Altze</h5>
           <a href="https://www.facebook.com/vasilis.altzerinis/" target="_blank" rel="noreferrer"><img className='facebook' src={fb} alt="facebook" /></a>
           <a href="https://www.linkedin.com/in/%CE%B2%CE%B1%CF%83%CE%B9%CE%BB%CE%B7%CF%82-%CE%B1%CE%BB%CF%84%CE%B6%CE%B5%CF%81%CE%B9%CE%BD%CE%B7%CF%82-28319024a/" target="_blank" rel="noreferrer"><img className='linkedin' src={linked} alt="LinkedIn" /></a>
           <a href="https://github.com/Bill-1991" target="_blank" rel="noreferrer"><img className='github' src={git} alt="GitHub" /></a>
-          </div>
-          <div style={{justifySelf: "end"}}>
+        </div>
+        <div style={{justifySelf: "end"}}>
           <button className="onsocial" style={{position: "relative"}} onClick={props.handleMore}><div className="dots" style={navdots}><h3 className="first-dot">.</h3><h3 className="sec-dot">.</h3><h3 className="third-dot">.</h3></div></button>
-           </div>
-           </Row>
-          <Row style={{position: "relative"}}>
-          <Container fluid className="premore d-grid" style={navStyle}>
-           {props.more === true ?
-           <div className="allmore">
-           <div className='onmore'>
-           <Link to="/"><button onClick={props.handleMore} ><strong>Home</strong></button></Link>
-           <Link to="/about"><button onClick={props.handleMore} ><strong>About</strong></button></Link>
-           <Link to="/projects"><button onClick={props.handleMore} ><strong>Projects</strong></button></Link>
-           <Link to="/contact"><button onClick={props.handleMore} ><strong>Contact</strong></button></Link>
-           <Link to="/blog"><button onClick={props.handleMore} ><strong>Blog</strong></button></Link>
-           </div>
-           </div>
-            : <div className="offmore"></div>
-}
-           </Container>
-           </Row>
-        </Container>   
+        </div>
+      </Row>
+      <Row style={{position: "relative"}}>
+        <Container fluid className="premore d-grid" style={navStyle}>
+          {props.more === true ?
+            <div className="allmore">
+              <div className='onmore'>
+                <Link to="/">
+                  <button onClick={props.handleMore} >
+                    <strong>Home</strong>
+                  </button>
+                </Link>
+                <Link to="/about">
+                  <button onClick={props.handleMore} >
+                    <strong>About</strong>
+                  </button>
+                </Link>
+                <Link to="/projects">
+                  <button onClick={props.handleMore} >
+                    <strong>Projects</strong>
+                  </button>
+                </Link>
+                <Link to="/contact">
+                  <button onClick={props.handleMore} >
+                    <strong>Contact</strong>
+                  </button>
+                </Link>
+                <Link to="/blog">
+                  <button onClick={props.handleMore} >
+                    <strong>Blog</strong>
+                  </button>
+                </Link>
+              </div>
+            </div>
+            : 
+            <div className="offmore"></div>
+            }
+        </Container>
+      </Row>
+    </Container>   
   )
 }
 
-export default NavMob
+export default NavMob;
 
 /*{props.more === true ? <div className="quotes">
             <strong><h3>{quote[random].q}</h3></strong>

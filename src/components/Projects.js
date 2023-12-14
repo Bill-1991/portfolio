@@ -8,9 +8,10 @@ import vid1 from "../assets/commercevid1.mp4"
 
 const Projects = () => {
 
-  const [done, setDone] = useState([{id: "0", name: "E-commerce", vid: vid1, desc: "Responsive e-commerce site for anime", delay: 500, liveSite: "https://splendid-granita-8f1e4f.netlify.app/", source: "https://github.com/Bill-1991/bill-commerce/tree/master", skills: ["Html", "Css", "Bootstrap", "Javascript", "React", "Node"], flip: false},
-                {id: "1", name: "Baby names picker", img: "https://picsum.photos/200/300", desc: "Pick a name for your newborn baby.Every name's origin and meaning is given on this fully responsive website", delay: 1000, liveSite: "", source: "", skills: ["Html", "Css", "bootstrap", "Javscript", "React"], flip: false},
-                {id: "2", name: "25 + 5 clock", img: "https://picsum.photos/200/300", desc: "An appliction mostly for arranging your studying in the best way possible", delay: 1500, liveSite: "", source: "", skills: ["Html", "Css", "bootstrap", "Javscript", "React"], flip: false}])  
+  const [done, setDone] = useState([{id: "0", name: "E-commerce", vid: vid1, desc: "Responsive e-commerce site for anime", delay: 500, liveSite: "https://splendid-granita-8f1e4f.netlify.app/", source: "https://github.com/Bill-1991/bill-commerce/tree/master", skills: ["Html", "Css", "Bootstrap", "Javascript", "React", "Node", "MySQL", "React-Router", "Anime API"], flip: false},
+                {id: "1", name: "Insurances site", img: "https://picsum.photos/200/300", desc: "A site for a company called Worthinsurance. Descriptions and packets of every insurance the company offers", delay: 1000, liveSite: "https://worthinsurance.netlify.app", source: "https://github.com/Bill-1991/insurances-site/tree/main/src", skills: ["Html", "Css", "Javscript", "React"], flip: false},
+                {id: "2", name: "Multistep form", img: "https://picsum.photos/200/300", desc: "Multistep Form. (Not fully constructed)", delay: 1500, liveSite: "https://warm-sfogliatella-1b0cc2.netlify.app/", source: "https://github.com/Bill-1991/multistep-form-frontmentor/tree/master/src", skills: ["Html", "Css", "Javscript"], flip: false},
+                {id: "3", name: "Tic Tac Toe", img: "https://picsum.photos/200/300", desc: "Tic Tac Toe minigame. (Not fully constructed. There's no live site on this only the source code. VS mode only does random moves)", delay: 1500, liveSite: "", source: "https://github.com/Bill-1991/Tic-tac-toe", skills: ["Html", "Css", "Javscript"], flip: false}])  
   
   const handleFlipBack = (id) => {
     let arr = [...done]
