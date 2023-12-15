@@ -14,13 +14,34 @@ import emailjs from '@emailjs/browser';
 
 
 function App() { 
-  const [more, setMore] = useState(false)
-  const [text, setText] = useState("")
-  const [submit, setSubmit] = useState(false)
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
+  const [more, setMore] = useState(false);
+  const [text, setText] = useState("");
+  const [submit, setSubmit] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const form = useRef();
-  const [displayNav, setDisplayNav] = useState(true)
+  const [displayNav, setDisplayNav] = useState(true);
+  const [onSkills, setOnSkills] = useState(true);
+  const [onCertifications, setOnCertifications] = useState(false);
+  const [onToCome, setOnToCome] = useState(false);
+
+  const handleSkills = () => {
+    setOnSkills(true)
+    setOnCertifications(false)
+    setOnToCome(false)
+  }
+
+  const handleCertifications = () => {
+    setOnSkills(false)
+    setOnCertifications(true)
+    setOnToCome(false)
+  }
+
+  const handleToCome = () => {
+    setOnSkills(false)
+    setOnCertifications(false)
+    setOnToCome(true)
+  }
 
   const handleDisplayNav = () => {
     if (displayNav === true){
@@ -83,20 +104,18 @@ const handleEmailChange = (e) => {
         <Routes>
           <Route exact path="/" element={<Col><Home /></Col>} />
           <Route exact path="/projects" element={<Col><Projects /></Col>} /> 
-          <Route exact path="/about" element={<Col><About /></Col>} />
+          <Route exact path="/about" element={<Col><About onSkills={onSkills} onCertifications={onCertifications} onToCome={onToCome} handleSkills={handleSkills} handleCertifications={handleCertifications} handleToCome={handleToCome} /></Col>} />
           <Route exact path="/contact" element={<Col><Contact submit={submit} text={text} name={name} email={email} form={form} sendEmail={sendEmail} handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleTextChange={handleTextChange}/></Col>} />
 
           </Routes>
          }
         { displayNav === true ?
         <div className='hidenav'>
-          <p>{"<==="}</p>
-          <button className='hide' style={{backgroundColor: "rgba(0,0,0,0)", border: "none", color: "gold"}} onClick={handleDisplayNav}>Hide</button>
+          <button className='hide' style={{backgroundColor: "rgba(0,0,0,0)", fontSize: "50px", fontWeight: "900", border: "none"}} onClick={handleDisplayNav}>{"←"}</button>
         </div>
         : 
         <div className='dispnav'>
-          <button onClick={handleDisplayNav} className='show' style={{backgroundColor: "rgba(0,0,0,0)", border: "none", color: "gold"}}>Show</button>
-          <p>{"===>"}</p>
+          <button onClick={handleDisplayNav} className='show' style={{backgroundColor: "rgba(0,0,0,0)", fontSize: "50px", fontWeight: "900", border: "none"}}>{"→"}</button>
         </div>
         }
         </Row>

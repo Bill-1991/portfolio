@@ -15,12 +15,12 @@ const NavMob = (props) => {
     background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%)",
     gridTemplateRows: "63vh 30vh",
     height: "0",
-    transition: "height 0.4s ease-in-out"
+    //transition: "height 0.4s ease-in-out"
   } : {
     background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,121,9,1) 35%, rgba(0,212,255,1) 100%)",
     gridTemplateRows: "63vh 30vh", 
     height: "100%",
-    transition: "height 0.2s ease-in-out",
+    //transition: "height 0.2s ease-in-out",
     position: "relative"
   }
 
