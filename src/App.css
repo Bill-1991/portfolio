@@ -476,6 +476,11 @@
     .nav .onsocial{
         display: none;
     }
+
+    .about .known .certifications p,
+    .about .known .toCome p{
+        font-size: 7px !important;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
