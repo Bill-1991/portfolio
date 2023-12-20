@@ -207,7 +207,7 @@
     color: white;
     position: absolute;
     display: grid;
-    grid-template-rows: 15% 55% 30%;
+    grid-template-rows: 15% 65% 20%;
     align-items: center !important;
     height: 49vh;
     transform: rotateY(-180deg);
@@ -218,10 +218,18 @@
     width: 100% !important;
     justify-content: center;
     display: grid;
-    grid-template-rows: 60% 15% 25%;
+    grid-template-rows: 70% 10% 20%;
     position: absolute;
-    align-items: start;
+    align-items: flex-start;
     height: 49vh;
+}
+
+.card .card-back button:hover,
+.cardflip .card-back button:hover {
+    background-color: white !important;
+    border-width: 5px;
+    font-weight: 700;
+    color: black !important;
 }
 
 .projects .skills{
@@ -233,6 +241,10 @@
 .projects .skills p{
     position: relative;
     top:5px;
+}
+
+.projects .desc{
+    font-size: 15px;
 }
 
 .card .card-front .outer-flip,
@@ -312,7 +324,7 @@
 }
 
 .about .intro .intro-par p{
-    width: 80%;
+    width: 70%;
     font-weight: 700;
     justify-self: center;
 }
@@ -443,13 +455,16 @@
         font-size: 11px !important;
     }
 
+    .about{
+        height: fit-content !important;
+    }
+
     .about .intro .intro-par{
         font-size: 12px;
     }
 
-    .about .intro .intro-par img{
-        width: 100px !important;
-        height: 100px !important;
+    .about .known{
+        min-height: 120px !important;
     }
 
     .projects{
@@ -548,6 +563,10 @@
     .nav .me {
         width: 100% !important;
         height: 70%
+    }
+
+    .projects .skills .skill{
+        font-size: 10px !important;
     }
 }
 
@@ -662,7 +681,25 @@
         pointer-events: none;
     }
 
+    .home{
+        min-width: auto !important;
+    }
+
+    .projects{
+        min-width: auto !important
+    }
+
+    .contact{
+        min-width: auto !important;
+    }
+
+    .card-front img{
+        width: 80% !important;
+        justify-self: center;
+    }
+
     .about{
+        min-width: auto !important;
         min-height: 93vh !important;
     }
 
